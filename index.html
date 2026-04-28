@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ink Yard Tattoo Studio | Award Winning Tattoo Artist in Odisha</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#090909;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    :root{
+      --gold:#d6a84f;
+      --dark:#090909;
+      --soft:#151515;
+      --text:#d9d9d9;
+      --white:#ffffff;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(9,9,9,0.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .navbar{
+      width:90%;
+      max-width:1250px;
+      margin:auto;
+      height:82px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-family:'Playfair Display', serif;
+      font-size:30px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    .logo span{
+      color:var(--gold);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      color:#e7e7e7;
+      position:relative;
+      transition:0.3s;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      width:0;
+      height:2px;
+      left:0;
+      bottom:-6px;
+      background:var(--gold);
+      transition:0.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .book-btn{
+      background:var(--gold);
+      color:#111 !important;
+      padding:12px 24px;
+      border-radius:30px;
+      font-weight:700;
+      box-shadow:0 8px 25px rgba(214,168,79,0.25);
+    }
+
+    .book-btn::after{
+      display:none;
+    }
+
+    .menu-icon{
+      display:none;
+      font-size:26px;
+      cursor:pointer;
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      min-height:100vh;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,0.92),rgba(0,0,0,0.55),rgba(0,0,0,0.2)),
+        url('https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      padding:120px 0 70px;
+    }
+
+    .hero-content{
+      width:90%;
+      max-width:1250px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .tagline{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--gold);
+      font-size:14px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:18px;
+      animation:fadeUp 0.9s ease forwards;
+    }
+
+    .tagline::before{
+      content:"";
+      width:45px;
+      height:1px;
+      background:var(--gold);
+    }
+
+    .hero h1{
+      font-family:'Playfair Display', serif;
+      font-size:74px;
+      line-height:1.02;
+      max-width:760px;
+      margin-bottom:22px;
+      animation:fadeUp 1s ease forwards;
+    }
+
+    .hero h1 span{
+      color:var(--gold);
+    }
+
+    .hero p{
+      color:#d7d7d7;
+      font-size:17px;
+      line-height:1.8;
+      max-width:630px;
+      margin-bottom:34px;
+      animation:fadeUp 1.1s ease forwards;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      animation:fadeUp 1.2s ease forwards;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+      padding:15px 28px;
+      border-radius:40px;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:0.35s;
+    }
+
+    .primary-btn{
+      background:var(--gold);
+      color:#111;
+      box-shadow:0 12px 30px rgba(214,168,79,0.28);
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,0.28);
+      color:#fff;
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover{
+      transform:translateY(-5px);
+    }
+
+    .award-card{
+      background:rgba(18,18,18,0.78);
+      border:1px solid rgba(214,168,79,0.25);
+      backdrop-filter:blur(14px);
+      padding:35px;
+      border-radius:28px;
+      box-shadow:0 30px 80px rgba(0,0,0,0.35);
+      animation:floatCard 4s ease-in-out infinite;
+    }
+
+    .award-card i{
+      color:var(--gold);
+      font-size:42px;
+      margin-bottom:22px;
+    }
+
+    .award-card h3{
+      font-family:'Playfair Display', serif;
+      font-size:32px;
+      margin-bottom:14px;
+    }
+
+    .award-card p{
+      margin:0;
+      font-size:15px;
+      color:#cfcfcf;
+    }
+
+    /* ================= COMMON ================= */
+    section{
+      padding:100px 0;
+    }
+
+    .container{
+      width:90%;
+      max-width:1250px;
+      margin:auto;
+    }
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:58px;
+    }
+
+    .section-heading span{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .section-heading h2{
+      font-family:'Playfair Display', serif;
+      font-size:48px;
+      margin-top:10px;
+    }
+
+    .section-heading p{
+      max-width:680px;
+      margin:16px auto 0;
+      color:var(--text);
+      line-height:1.8;
+    }
+
+    /* ================= ABOUT ================= */
+    .about{
+      background:#0f0f0f;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .about-img{
+      position:relative;
+    }
+
+    .about-img img{
+      width:100%;
+      height:560px;
+      object-fit:cover;
+      border-radius:30px;
+      filter:grayscale(20%);
+    }
+
+    .experience-box{
+      position:absolute;
+      right:-25px;
+      bottom:35px;
+      background:var(--gold);
+      color:#111;
+      padding:24px 30px;
+      border-radius:24px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .experience-box h3{
+      font-size:42px;
+      line-height:1;
+    }
+
+    .about-text h2{
+      font-family:'Playfair Display', serif;
+      font-size:48px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:var(--text);
+      line-height:1.85;
+      margin-bottom:18px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:32px;
+    }
+
+    .stat-box{
+      background:#171717;
+      border:1px solid rgba(255,255,255,0.08);
+      padding:24px;
+      border-radius:20px;
+      transition:0.35s;
+    }
+
+    .stat-box:hover{
+      transform:translateY(-8px);
+      border-color:rgba(214,168,79,0.5);
+    }
+
+    .stat-box h3{
+      color:var(--gold);
+      font-size:32px;
+    }
+
+    .stat-box p{
+      margin:5px 0 0;
+      font-size:14px;
+    }
+
+    /* ================= SERVICES ================= */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+    }
+
+    .service-card{
+      background:linear-gradient(180deg,#171717,#101010);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:32px 25px;
+      border-radius:26px;
+      transition:0.35s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:rgba(214,168,79,0.12);
+      right:-40px;
+      top:-40px;
+      transition:0.35s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(214,168,79,0.45);
+    }
+
+    .service-card i{
+      color:var(--gold);
+      font-size:34px;
+      margin-bottom:22px;
+    }
+
+    .service-card h3{
+      font-size:21px;
+      margin-bottom:12px;
+    }
+
+    .service-card p{
+      color:var(--text);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    /* ================= PORTFOLIO ================= */
+    .portfolio{
+      background:#0f0f0f;
+    }
+
+    .gallery{
+      columns:3 280px;
+      column-gap:22px;
+    }
+
+    .gallery-item{
+      break-inside:avoid;
+      margin-bottom:22px;
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-item img{
+      width:100%;
+      display:block;
+      transition:0.55s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.08);
+      filter:brightness(55%);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:24px;
+      opacity:0;
+      transition:0.35s;
+      background:linear-gradient(transparent,rgba(0,0,0,0.88));
+    }
+
+    .gallery-item:hover .gallery-overlay{
+      opacity:1;
+    }
+
+    .gallery-overlay h3{
+      font-family:'Playfair Display', serif;
+      font-size:27px;
+    }
+
+    .gallery-overlay p{
+      color:var(--gold);
+      margin-top:5px;
+      font-size:14px;
+    }
+
+    /* ================= SOCIAL MEDIA ================= */
+    .social-section{
+      background:
+        linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),
+        url('https://images.unsplash.com/photo-1542727365-19732a80dcfd?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+    }
+
+    .social-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .social-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(14px);
+      border-radius:28px;
+      padding:36px 28px;
+      text-align:center;
+      transition:0.35s;
+    }
+
+    .social-card:hover{
+      transform:translateY(-10px);
+      background:rgba(214,168,79,0.12);
+    }
+
+    .social-card i{
+      font-size:38px;
+      color:var(--gold);
+      margin-bottom:18px;
+    }
+
+    .social-card h3{
+      margin-bottom:10px;
+    }
+
+    .social-card p{
+      color:var(--text);
+      line-height:1.7;
+      font-size:14px;
+      margin-bottom:22px;
+    }
+
+    .social-card a{
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    /* ================= BOOKING ================= */
+    .booking{
+      background:#0f0f0f;
+    }
+
+    .booking-grid{
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    .booking-info{
+      background:#171717;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:38px;
+    }
+
+    .booking-info h3{
+      font-family:'Playfair Display', serif;
+      font-size:36px;
+      margin-bottom:18px;
+    }
+
+    .booking-info p{
+      color:var(--text);
+      line-height:1.8;
+      margin-bottom:24px;
+    }
+
+    .info-line{
+      display:flex;
+      gap:15px;
+      margin:18px 0;
+      color:#ddd;
+    }
+
+    .info-line i{
+      color:var(--gold);
+      margin-top:4px;
+    }
+
+    form{
+      background:#171717;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:38px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      background:#0c0c0c;
+      border:1px solid rgba(255,255,255,0.12);
+      color:#fff;
+      padding:16px 18px;
+      border-radius:16px;
+      margin-bottom:18px;
+      outline:none;
+      font-family:'Poppins', sans-serif;
+      transition:0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:var(--gold);
+      box-shadow:0 0 0 3px rgba(214,168,79,0.12);
+    }
+
+    textarea{
+      min-height:130px;
+      resize:none;
+    }
+
+    .submit-btn{
+      width:100%;
+      border:none;
+      padding:16px;
+      border-radius:40px;
+      background:var(--gold);
+      color:#111;
+      font-weight:800;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.35s;
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 15px 35px rgba(214,168,79,0.28);
+    }
+
+    /* ================= TESTIMONIALS ================= */
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .review-card{
+      background:#171717;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:26px;
+      padding:30px;
+    }
+
+    .stars{
+      color:var(--gold);
+      margin-bottom:16px;
+    }
+
+    .review-card p{
+      color:var(--text);
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .review-card h4{
+      color:#fff;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      background:#050505;
+      padding:60px 0 25px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      gap:35px;
+      margin-bottom:35px;
+    }
+
+    footer h3{
+      font-family:'Playfair Display', serif;
+      font-size:28px;
+      margin-bottom:16px;
+    }
+
+    footer h3 span{
+      color:var(--gold);
+    }
+
+    footer p,
+    footer a{
+      color:#bfbfbf;
+      line-height:1.9;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    footer a:hover{
+      color:var(--gold);
+    }
+
+    .footer-social{
+      display:flex;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .footer-social a{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#151515;
+      color:var(--gold);
+      transition:0.3s;
+    }
+
+    .footer-social a:hover{
+      background:var(--gold);
+      color:#111;
+      transform:translateY(-5px);
+    }
+
+    .copyright{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:22px;
+      text-align:center;
+      color:#999;
+      font-size:14px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:58px;
+      height:58px;
+      background:#25d366;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:30px;
+      z-index:999;
+      box-shadow:0 12px 30px rgba(0,0,0,0.35);
+      animation:pulse 1.6s infinite;
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .reveal{
+      opacity:0;
+      transform:translateY(45px);
+      transition:0.9s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes floatCard{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-15px);}
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+      70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:992px){
+      .hero-content,
+      .about-grid,
+      .booking-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:56px;
+      }
+
+      .services-grid,
+      .social-grid,
+      .testimonials-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:768px){
+      .menu-icon{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:82px;
+        left:0;
+        width:100%;
+        background:#090909;
+        flex-direction:column;
+        padding:25px;
+        display:none;
+        border-bottom:1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.active{
+        display:flex;
+      }
+
+      .hero h1{
+        font-size:44px;
+      }
+
+      .section-heading h2,
+      .about-text h2{
+        font-size:36px;
+      }
+
+      .services-grid,
+      .social-grid,
+      .testimonials-grid,
+      .stats,
+      .footer-grid,
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .about-img img{
+        height:420px;
+      }
+
+      .experience-box{
+        right:15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">Ink <span>Yard</span></a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">Artist</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#social">Social</a>
+        <a href="#booking" class="book-btn">Book Slot</a>
+      </div>
+
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div>
+        <div class="tagline">Award Winning Tattoo Studio</div>
+        <h1>Odisha’s Premium <span>Tattoo Experience</span></h1>
+        <p>
+          Ink Yard is built for people who want more than a tattoo — they want a story, a memory, and a permanent piece of art created by an award-winning tattoo artist.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking" class="primary-btn"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+          <a href="#portfolio" class="secondary-btn"><i class="fa-solid fa-image"></i> View Portfolio</a>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <i class="fa-solid fa-trophy"></i>
+        <h3>Best Studio in Odisha</h3>
+        <p>
+          Recognized for premium tattoo artwork, hygiene standards, client trust, and creative custom tattoo designs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid reveal">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&w=900&q=80" alt="Tattoo artist working">
+        <div class="experience-box">
+          <h3>5+</h3>
+          <p>Years of Art</p>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="tagline">Meet The Artist</span>
+        <h2>Custom Tattoos with Detail, Hygiene & Meaning</h2>
+        <p>
+          Ink Yard focuses on meaningful tattoo designs, clean finishing, premium ink quality, and safe studio hygiene. Every tattoo is planned with the client’s idea, personality, placement, and long-term look in mind.
+        </p>
+        <p>
+          From minimal tattoos to full custom artwork, the studio provides a professional experience from consultation to final aftercare guidance.
+        </p>
+
+        <div class="stats">
+          <div class="stat-box">
+            <h3>500+</h3>
+            <p>Tattoos Completed</p>
+          </div>
+          <div class="stat-box">
+            <h3>4.9</h3>
+            <p>Client Rating</p>
+          </div>
+          <div class="stat-box">
+            <h3>100%</h3>
+            <p>Hygiene Focus</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>What We Do</span>
+        <h2>Premium Tattoo Services</h2>
+        <p>Complete tattoo solutions for first-time clients, tattoo lovers, and people looking for highly detailed custom artwork.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h3>Custom Tattoo</h3>
+          <p>Personalized tattoo design based on your story, reference, placement and style preference.</p>
+        </div>
+        <div class="service-card reveal">
+          <i class="fa-solid fa-feather"></i>
+          <h3>Minimal Tattoo</h3>
+          <p>Clean, elegant and meaningful minimal tattoos with sharp finishing and perfect placement.</p>
+        </div>
+        <div class="service-card reveal">
+          <i class="fa-solid fa-skull"></i>
+          <h3>Realistic Tattoo</h3>
+          <p>Detailed black and grey realism, portrait concepts, bold shading and high-impact artwork.</p>
+        </div>
+        <div class="service-card reveal">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <h3>Cover Up</h3>
+          <p>Transform old, faded or unwanted tattoos into a fresh and powerful new design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Our Work</span>
+        <h2>Featured Tattoo Portfolio</h2>
+        <p>Replace these sample images with original Ink Yard tattoo work photos for the final client website.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=700&q=80" alt="Tattoo work">
+          <div class="gallery-overlay"><h3>Minimal Line Art</h3><p>Fine Line Tattoo</p></div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=700&q=80" alt="Tattoo work">
+          <div class="gallery-overlay"><h3>Blackwork Design</h3><p>Bold & Clean</p></div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=700&q=80" alt="Tattoo studio">
+          <div class="gallery-overlay"><h3>Studio Session</h3><p>Premium Experience</p></div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1590246814883-57c51196b6a5?auto=format&fit=crop&w=700&q=80" alt="Tattoo work">
+          <div class="gallery-overlay"><h3>Creative Ink</h3><p>Custom Artwork</p></div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1598371839871-5c5bb00bdc28?auto=format&fit=crop&w=700&q=80" alt="Tattoo work">
+          <div class="gallery-overlay"><h3>Detail Work</h3><p>Sharp Finishing</p></div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?auto=format&fit=crop&w=700&q=80" alt="Tattoo work">
+          <div class="gallery-overlay"><h3>Ink Story</h3><p>Meaningful Design</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-section" id="social">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Social Media</span>
+        <h2>Follow Ink Yard Online</h2>
+        <p>Connect Instagram, WhatsApp and YouTube to show daily tattoo work, reels, client reviews and booking updates.</p>
+      </div>
+
+      <div class="social-grid">
+        <div class="social-card reveal">
+          <i class="fa-brands fa-instagram"></i>
+          <h3>Instagram Portfolio</h3>
+          <p>Showcase reels, tattoo photos, healed results, behind-the-scenes and client stories.</p>
+          <a href="https://instagram.com/" target="_blank">Follow on Instagram</a>
+        </div>
+        <div class="social-card reveal">
+          <i class="fa-brands fa-whatsapp"></i>
+          <h3>WhatsApp Booking</h3>
+          <p>Allow clients to directly message for tattoo price, design consultation and slot booking.</p>
+          <a href="https://wa.me/919999999999" target="_blank">Chat on WhatsApp</a>
+        </div>
+        <div class="social-card reveal">
+          <i class="fa-brands fa-youtube"></i>
+          <h3>Video Showcase</h3>
+          <p>Upload process videos, tattoo care tips, studio tour and transformation content.</p>
+          <a href="https://youtube.com/" target="_blank">Watch Videos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Book Your Slot</span>
+        <h2>Start Your Tattoo Journey</h2>
+        <p>Clients can fill this form for consultation, tattoo idea, preferred date and contact details.</p>
+      </div>
+
+      <div class="booking-grid">
+        <div class="booking-info reveal">
+          <h3>Visit Ink Yard</h3>
+          <p>
+            Get expert guidance for your tattoo idea, placement, size, price and aftercare before final booking.
+          </p>
+          <div class="info-line"><i class="fa-solid fa-location-dot"></i><span>Odisha, India<br>Replace with exact studio address</span></div>
+          <div class="info-line"><i class="fa-solid fa-phone"></i><span>+91 99999 99999</span></div>
+          <div class="info-line"><i class="fa-solid fa-clock"></i><span>Monday - Sunday: 11:00 AM - 8:00 PM</span></div>
+          <div class="info-line"><i class="fa-solid fa-shield-heart"></i><span>Hygienic setup, sterilized tools and professional aftercare guidance.</span></div>
+        </div>
+
+        <form class="reveal" onsubmit="sendWhatsApp(event)">
+          <div class="form-row">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-row">
+            <select id="service" required>
+              <option value="">Select Tattoo Type</option>
+              <option>Minimal Tattoo</option>
+              <option>Custom Tattoo</option>
+              <option>Realistic Tattoo</option>
+              <option>Cover Up Tattoo</option>
+            </select>
+            <input type="date" id="date" required>
+          </div>
+          <input type="text" id="placement" placeholder="Tattoo Placement e.g. Arm, Wrist, Chest">
+          <textarea id="message" placeholder="Describe your tattoo idea / size / reference details"></textarea>
+          <button type="submit" class="submit-btn">Send Booking Request on WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Client Love</span>
+        <h2>What Clients Say</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="review-card reveal">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>“Amazing detailing and very professional experience. The studio was clean and the artist explained everything properly.”</p>
+          <h4>- Client Review</h4>
+        </div>
+        <div class="review-card reveal">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>“Best place for meaningful tattoos. My design came out better than expected. Highly recommended.”</p>
+          <h4>- Client Review</h4>
+        </div>
+        <div class="review-card reveal">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>“Great finishing, hygienic setup and friendly guidance. Loved the complete tattoo experience.”</p>
+          <h4>- Client Review</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Ink <span>Yard</span></h3>
+        <p>Award-winning tattoo studio in Odisha creating premium tattoos with hygiene, detail and meaning.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#about">About Artist</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#booking">Book Slot</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Odisha, India</p>
+        <p>+91 99999 99999</p>
+        <p>inkyardstudio@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <p>© 2026 Ink Yard Tattoo Studio. Website & Social Media by R9chhod Studios.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/919999999999" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll(){
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 120;
+
+        if(elementTop < windowHeight - revealPoint){
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    function sendWhatsApp(event){
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+      const placement = document.getElementById('placement').value;
+      const message = document.getElementById('message').value;
+
+      const studioNumber = '919999999999';
+
+      const text = `Hello Ink Yard,%0A%0AI want to book a tattoo slot.%0A%0AName: ${name}%0APhone: ${phone}%0ATattoo Type: ${service}%0APreferred Date: ${date}%0APlacement: ${placement}%0AIdea: ${message}`;
+
+      window.open(`https://wa.me/${studioNumber}?text=${text}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
